@@ -1,0 +1,299 @@
+/***general style***/
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+p{
+    color: #2A2A2A;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+
+}
+ul li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 22px;
+}
+button{
+    cursor: pointer;
+}
+
+.rotate { /*for vertical text**/
+    -webkit-writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+            writing-mode: vertical-rl;
+    -webkit-text-orientation: mixed;
+        text-orientation: mixed;
+        rotate: 180deg;
+        padding: 25px 10px;
+    white-space: nowrap;
+}
+
+/*** end general style***/
+
+/***header***/
+.header{
+    height: 100vh;
+    padding-top: 1em;
+}
+.container {
+    position: relative;
+    margin: auto;
+    width: 1140px;
+}
+
+
+/**navbar***/
+nav{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/**logo + menu icon***/
+.icons{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.menu-icon{
+    display: none;
+}
+.menu-icon img{
+    width: 30px;
+    cursor: pointer;
+}
+
+/**navbar-menu***/
+
+.navbar-menu{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar ul{
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.navbar ul li{
+    margin: auto 20px;
+    padding-bottom: 7px;
+}
+
+.navbar ul li a:hover{
+    border-bottom: 5px solid black;
+    padding-bottom: 7px;
+}
+
+/**social-media icons***/
+
+.social-media{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+}
+
+.social-media img{
+    margin-left: 20px;
+}
+
+/**End navbar***/
+
+/***content****/
+
+.content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 1em;
+}
+
+/**col-1***/
+
+.col-1{
+    display: flex;
+    position: relative;   
+}
+
+/***about me section****/
+.about-me{
+    position: absolute;
+    bottom: 15px;
+}
+
+.about-me ul{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+
+.about-me ul li a{    
+    white-space:nowrap;
+}
+
+.img{
+    margin: auto;
+}
+
+.img img{
+   width: 100%;
+}
+
+/***col-2********/
+.col-2{
+    margin: 2em 30px 2em 0;
+    display: flex;
+}
+
+/**vertical ligne***/
+.advice{
+    display: flex;
+    flex-direction: column;
+}
+
+.advice .ligne{
+    margin: 0px auto;
+}
+
+.col-2  div.col{
+    margin-left: 30px;
+}
+
+/***why me**/
+
+.col-2  h2{
+    font-size: 50px;
+    font-weight: 900;
+    line-height: 63px;
+    margin-bottom: 15px;
+}
+
+.col-2 .why-me p{
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    padding: 10px 0;
+}
+
+.col-2 .why-me button{
+    margin: 15px 0;
+    border: #C4C4C4 solid 1px;
+    padding: 15px 25px;
+    background-color: transparent;
+}
+
+/***latest work****/
+.col-2 .latest-work{
+    position: absolute;
+}
+
+.col-2 .latest-work .work{
+    display: flex; 
+    flex-direction: row;
+    margin: 20px 0;
+}
+
+.col-2 .latest-work .work img{
+    cursor: pointer;
+    margin-right: 20px;
+    width: auto;
+}
+
+.col-2 .view-all a{
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #6BC8E1;
+    padding-bottom: 20px;
+}
+
+
+/***big screen***/
+@media (max-width: 1199px) and (min-width: 990px) {
+  .container {
+    width: 992px;
+  }
+  /***navbar****/
+  .menu-icon{
+    display: none;
+  }
+}
+
+/**medium screen***/
+@media screen and (max-width: 991px) {
+  .container {
+    width: 720px;
+  }
+  /**navbar***/
+  nav{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .active{
+    display: contents !important;
+    }
+  .menu-icon{
+    display: contents;
+  }
+  .navbar{
+    margin: auto;
+  }
+  .navbar-menu{
+    display: none;
+    flex-direction: column;
+  }
+  .navbar ul {
+    flex-direction: column;
+  }
+  .navbar ul li{
+    margin-bottom: 10px;
+  }
+  .social-media{
+    margin: auto;
+  }
+  /**content**/
+  .content{
+    grid-template-columns: 1fr;
+   }
+}
+
+/***small screen***/
+@media screen and (max-width: 768px) {
+  .container {
+    width: 560px;
+  }
+  .content{
+    grid-template-columns: 1fr;
+   }
+}
+
+/**ex-small screen***/
+@media screen and (max-width: 576px) {
+  .container {
+    width: 85%;
+  }
+
+  /***leatest work***/
+  .col-2 .latest-work .work{
+    flex-direction: column;
+  }
+  .col-2 .latest-work .work img{
+    width: auto;
+    margin: 20px 0;
+  }
+}
